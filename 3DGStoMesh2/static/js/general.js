@@ -59,18 +59,25 @@ modelLabelDropdown.addEventListener("change", (event) => {
   texture2 = null;
   renderNextFrame = true;
   modelType = modelLabelDropdown.value;
+  const _modelType = modelLabelDropdown.value;
   loadObj(
     `General/${model}/${modelTypeList[modelType]}/3DModel`,
     scene2,
     (p) => {
-      cmpContainerRight.children[1].children[0].value = p;
+      if (_modelType === modelType) {
+        cmpContainerRight.children[1].children[0].value = p;
+      }
     },
     (object) => {
-      object2 = object;
-      scene2.add(object);
-      toggleTexture(showMap);
-      cmpContainerRight.children[1].style.display = "none";
-      renderNextFrame = true;
+      if (_modelType === modelType) {
+        object2 = object;
+        scene2.add(object);
+        toggleTexture(showMap);
+        cmpContainerRight.children[1].style.display = "none";
+        renderNextFrame = true;
+      } else {
+        disposeGroup(object);
+      }
     }
   );
   renderNextFrame = true;
@@ -170,7 +177,9 @@ function cmpLeftLoad(url, name) {
     url,
     scene1,
     (p) => {
-      cmpContainerLeft.children[1].children[0].value = p;
+      if (name === model) {
+        cmpContainerLeft.children[1].children[0].value = p;
+      }
     },
     (object) => {
       if (name != model) {
@@ -211,7 +220,9 @@ function cmpRightLoad(url, name) {
     url,
     scene2,
     (p) => {
-      cmpContainerRight.children[1].children[0].value = p;
+      if (name === model) {
+        cmpContainerRight.children[1].children[0].value = p;
+      }
     },
     (object) => {
       if (name != model) {
