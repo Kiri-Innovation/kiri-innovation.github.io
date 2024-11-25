@@ -1,0 +1,133 @@
+.cmp-button-wrap {
+  text-align: center;
+  margin: 10px;
+  position: relative;
+}
+.cmp-button {
+  margin: 0px;
+  border: none;
+  background-color: #959595;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s, border-color 0.3s;
+  user-select: none;
+  height: 40px;
+  width: 140px;
+}
+.cmp-button:hover {
+  background-color: #82c0d6;
+}
+.cmp-button-left {
+  border-radius: 20px 0 0 20px;
+  margin-right: -2px;
+}
+.cmp-button-right {
+  border-radius: 0 20px 20px 0;
+  margin-left: -2px;
+}
+.cmp-button.active {
+  background-color: #3a5c8f;
+}
+#DRCheck3dgs,
+#generalCheck3dgs {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: #fff;
+  background: #3a5c8f;
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+.cmp-container {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.cmp-container-left,
+.cmp-container-right {
+  position: relative;
+  min-width: 48%;
+  flex: 1;
+  margin: 1%;
+  aspect-ratio: 1 / 1;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+.model-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(38, 70, 126, 0.8);
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 10;
+  user-select: none;
+}
+.dropdown:hover {
+  background-color: #4a7aa5;
+  color: #ffffff;
+}
+
+.selection-panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row !important;
+
+  width: 90% !important;
+  aspect-ratio: 3.8 / 1;
+  margin-left: 5%;
+}
+.selection-panel img {
+  flex: 0 1 0;
+  border-radius: 10px;
+  border: 0.5px solid #ccc;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: 46%;
+  object-fit: contain;
+  padding: 1px;
+  background-color: #dde9f7;
+  margin: 1% 5px 1% 5px;
+  cursor: pointer;
+
+  height: auto;
+  max-width: 100%;
+}
+.selection-panel img:hover {
+  border: 3px solid #4a7aa5;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.loading-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loading-wrap .progress {
+  width: 100px;
+  height: 20px;
+}
+.to-mesh .grid .cell img {
+  height: 554px;
+  object-fit: cover;
+}
+.bottom {
+  display: flex;
+}
+.bottom a {
+  flex: 1;
+}

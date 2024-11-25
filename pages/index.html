@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3D Gaussian Splatting to Mesh 2.0 Showcases by KIRI Engine</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/styles/index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./static/js/general.js"></script>
+    <script type="module" src="./static/js/DetectedAsReflection.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1">3D Gaussian Splatting to Mesh 2.0 Showcases by KIRI Engine</h1>
+              <div class="is-size-5 pub-auths">
+                <span> KIRI Innovations </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Introduction Video:</h2>
+            <div class="content has-text-justified">
+              <iframe
+                style="width: 100%"
+                src="https://www.youtube.com/embed/88X81MYZl8k?si=CwGEt4mkZ-WA0bFF"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Results Comparison: -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3" style="text-align: center">Results Comparison:</h2>
+        <div class="content">
+          <h3 class="title is-4">General</h3>
+          <div class="cmp-button-wrap">
+            <button class="cmp-button cmp-button-left active" id="generalCmpButtonLeft">Textured</button>
+            <button class="cmp-button cmp-button-right" id="generalCmpButtonRight">Geometry only</button>
+            <a id="generalCheck3dgs" target="_blank" rel="noopener noreferrer"> Check 3dgs </a>
+          </div>
+
+          <div class="cmp-container">
+            <div class="cmp-container-left" id="generalCmpContainerLeft">
+              <label class="model-label"> 2.0 </label>
+              <div class="loading-wrap">
+                <progress max="100" value="0" class="loading"></progress>
+              </div>
+            </div>
+            <div class="cmp-container-right" id="generalCmpContainerRight">
+              <select class="dropdown model-label" id="generalModelLabelDropdown">
+                <option value="0">1.0</option>
+                <option value="1">Photogrammetry</option>
+              </select>
+              <div class="loading-wrap">
+                <progress max="100" value="0" class="loading"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="selection-panel">
+            <img src="./static/General/Statue/cover.jpg" onclick="handleGeneralComparisonClick('Statue')" alt="" />
+            <img src="./static/General/Flower/cover.jpg" onclick="handleGeneralComparisonClick('Flower')" alt="" />
+            <img src="./static/General/Suitcase/cover.jpg" onclick="handleGeneralComparisonClick('Suitcase')" alt="" />
+            <img
+              src="./static/General/BrokenCar/cover.jpg"
+              onclick="handleGeneralComparisonClick('BrokenCar')"
+              alt=""
+            />
+          </div>
+        </div>
+        <br />
+        <div class="content">
+          <h3 class="title is-4">Detected As Reflection</h3>
+          <div class="cmp-button-wrap">
+            <button class="cmp-button cmp-button-left active" id="DRCmpButtonLeft">Textured</button>
+            <button class="cmp-button cmp-button-right" id="DRCmpButtonRight">Geometry only</button>
+            <a id="DRCheck3dgs" target="_blank" rel="noopener noreferrer"> Check 3dgs </a>
+          </div>
+
+          <div class="cmp-container">
+            <div class="cmp-container-left" id="DRCmpContainerLeft">
+              <label class="model-label"> 2.0 With Reflection Detector </label>
+              <div class="loading-wrap">
+                <progress max="100" value="0" class="loading"></progress>
+              </div>
+            </div>
+            <div class="cmp-container-right" id="DRCmpContainerRight">
+              <select class="dropdown model-label" id="DRModelLabelDropdown">
+                <option value="0">2.0 Without Reflection Detector</option>
+                <option value="1">1.0</option>
+                <option value="2">Photogrammetry</option>
+              </select>
+              <div class="loading-wrap">
+                <progress max="100" value="0" class="loading"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="selection-panel">
+            <img src="./static/DetectedAsReflection/TV/cover.jpg" onclick="handleDRComparisonClick('TV')" alt="" />
+            <img
+              src="./static/DetectedAsReflection/Buddha/cover.jpg"
+              onclick="handleDRComparisonClick('Buddha')"
+              alt=""
+            />
+            <img
+              src="./static/DetectedAsReflection/BackMirror/cover.jpg"
+              onclick="handleDRComparisonClick('BackMirror')"
+              alt=""
+            />
+          </div>
+        </div>
+        <p>
+          We predicted normal and depth maps to regulate the surface, eliminating holes and defects caused by shiny and
+          transparent regions in 3D Gaussian splatting.
+        </p>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3" style="text-align: center">More Unedited 3DGS to Mesh 2.0 Results:</h2>
+        <p>**Please note, mesh loading may be slow. We display high poly models here and files are big.</p>
+        <div class="content fixed-grid has-3-cols to-mesh">
+          <div class="grid">
+            <div class="cell">
+              <img src="./static/image/0cf3d36e-1dbd-4572-a3b1-6b81e396cbb1.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=d356cb5c1b93496d8192cac77158a535"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1859210600308015104"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/image/2d9f85c2-0e95-46e0-a4a0-f98f6142587f.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=e9e920bfb27b42feb5021f2dd776465b"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1859451576217763840"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/image/0ae0e041-1676-40df-8e67-5c61e263a554.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=f4915030ead74f5ca03880f01d37b36e"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1856931484665905152"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/image/75abd10a-b31a-43a7-bb54-5e8f0088abad.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=0567188634fc4f50a6a2dd21b1e091cd"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1858838533955911680"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/image/ab7430d1-0925-496b-8a52-e46332331e69.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=fe5e5e92f8d743478b9e3ac0d04c6df7"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1857400383970738176"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/image/ffd7e716-bdff-47b2-a61e-fbcc78b6e9f8.png" alt="" />
+              <div class="bottom">
+                <a
+                  href="https://test.kiriengine.app/share/shareModel/?serialize=939d8fb98dd544628c14eaa1cdd87d08"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View Textured Mesh
+                </a>
+                <a
+                  href="https://test.kiriengine.app/share/3dgs/?taskId=1859154913506885632"
+                  class="button is-small"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View 3DGS
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Try it yourself</h2>
+            <p>
+              Please download our latest 3.12 version of KIRI Engine and try the SOTA Gaussian to Mesh function
+              yourself!
+            </p>
+            <ul>
+              <li>
+                iOS:
+                <a
+                  href="https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142?platform=iphone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142?platform=iphone
+                </a>
+              </li>
+              <li>
+                Android:
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.kiriengine.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://play.google.com/store/apps/details?id=com.kiriengine.app
+                </a>
+              </li>
+              <li>
+                Web:
+                <a href="https://www.kiriengine.app/web-version/" target="_blank" rel="noopener noreferrer">
+                  https://www.kiriengine.app/web-version/
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <p>Join our warm community to get free trial</p>
+            <a href="https://discord.gg/DqfKjPYv" target="_blank" rel="noopener noreferrer">
+              https://discord.gg/DqfKjPYv
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
