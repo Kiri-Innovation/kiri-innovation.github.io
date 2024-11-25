@@ -63,8 +63,10 @@ modelLabelDropdown.addEventListener("change", (event) => {
     },
     (object) => {
       object2 = object;
+      scene2.add(object);
       toggleTexture(showMap);
       cmpContainerRight.children[1].style.display = "none";
+      renderNextFrame = true;
     }
   );
   renderNextFrame = true;
