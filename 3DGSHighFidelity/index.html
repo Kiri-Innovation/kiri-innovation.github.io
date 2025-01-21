@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>KIRI Engine high fidelity 3DGS</title>
+    <meta name="author" content="KIRI Innovations" />
+    <link rel="stylesheet" href="./static/styles/normalize.css" />
+    <link rel="stylesheet" href="./static/styles/index.css" />
+  </head>
+  <body>
+    <section class="hero banner">
+      <div class="bg-model-view">
+        <iframe
+          title=""
+          src="https://test.kiriengine.app/share/3dgsEmbed/1877764015342485504?userId=511?&bg_theme=transparent"
+          frameborder="0"
+          allowfullscreen
+          mozallowfullscreen
+          webkitallowfullscreen
+          allow="autoplay; fullscreen;"
+          execution-while-out-of-viewport
+          execution-while-not-rendered
+          style="max-width: 100%; max-height: 100%; min-width: 100%; min-height: 100%"
+        ></iframe>
+      </div>
+      <div class="hero-body">
+        <div class="container">
+          <div class="is-centered">
+            <div class="has-text-centered">
+              <img src="./static/image/logo.png" alt="KIRI Engine" />
+              <h1 class="title">High Fidelity 3D Gaussian Splatting Showcases</h1>
+              <div class="pub-auths">
+                <span> by KIRI Innovations </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section intro-video">
+      <div class="container">
+        <h2 class="title">Introduction Video:</h2>
+        <div class="content">
+          <iframe
+            height="500"
+            style="max-width: 100%; max-height: 100%; width: 100%; height: 100%"
+            src="https://www.youtube.com/embed/fhLEaMaD_XA?si=KYXsI3caymBhhF7U"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <section class="section compare-section">
+      <div class="container">
+        <h2 class="title">Rendering Results:</h2>
+        <div class="content hf-leg">
+          <h3>High fidelity vs. Legacy</h3>
+          <div class="cont">
+            <div class="tab image">
+              <div class="tab-content">
+                <div class="image-comparison">
+                  <div class="comparison-slider">
+                    <div class="before-container">
+                      <img class="before-image" src="./static/image/m-old-houseSnow.png" alt="Before" />
+                      <div class="tip">Legacy</div>
+                    </div>
+                    <div class="after-container">
+                      <img class="after-image" src="./static/image/m-houseSnow.png" alt="After" />
+                      <div class="tip">High Fidelity</div>
+                    </div>
+                    <div class="slider-handle">
+                      <div class="handle-line"></div>
+                      <div class="handle-circle"></div>
+                      <div class="handle-line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-nav">
+                <div class="tab-nav-item active" onclick="handleTabClick('houseSnow', 0)">
+                  <img src="./static/image/houseSnow.png" alt="" />
+                </div>
+                <div class="tab-nav-item" onclick="handleTabClick('trunk', 3)">
+                  <img src="./static/image/trunk.png" alt="" />
+                </div>
+                <div class="tab-nav-item" onclick="handleTabClick('angelStatue', 2)">
+                  <img src="./static/image/angelStatue.png" alt="" />
+                </div>
+                <div class="tab-nav-item" onclick="handleTabClick('birdFountain', 1)">
+                  <img src="./static/image/birdFountain.png" alt="" />
+                </div>
+              </div>
+            </div>
+            <div class="view-model-wrap">
+              <a
+                class="view-model"
+                href="https://test.kiriengine.app/share/3dgs?taskId=1878707747273310208"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                High fidelity
+              </a>
+              <span>View Model</span>
+              <a
+                class="view-model"
+                href="https://www.kiriengine.app/share/3dgs?taskId=1878500763731230720"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Legacy
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="content sibda">
+          <h3>Same input, benchmark with different apps</h3>
+          <div class="tab">
+            <div class="tab-content">
+              <div class="video-comparison">
+                <div class="video-item">
+                  <a
+                    href="https://test.kiriengine.app/share/3dgs/?taskId=1876174247215235072"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <video
+                      class="compare-video"
+                      src="./static/video/bakery/KIRI.mp4"
+                      poster="./static/image/bakery/KIRI.png"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                    ></video>
+                  </a>
+                </div>
+                <div class="video-item">
+                  <a
+                    href="https://poly.cam/capture/4d0df115-440c-4bb7-a538-0c5a69e20ccb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <video
+                      class="compare-video"
+                      src="./static/video/bakery/polycam.mp4"
+                      poster="./static/image/bakery/polycam.png"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                    ></video>
+                  </a>
+                </div>
+                <div class="video-item">
+                  <a
+                    href="https://lumalabs.ai/embed/96a88a70-2e2b-4061-bbd9-9151e3f4d75f?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <video
+                      class="compare-video"
+                      src="./static/video/bakery/luma.mp4"
+                      poster="./static/image/bakery/luma.png"
+                      autoplay
+                      muted
+                      loop
+                      playsinline
+                      webkit-playsinline
+                    ></video>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="tab-nav">
+              <div class="tab-nav-item active" onclick="handleVideoTabClick('bakery', 0)">
+                <img src="./static/image/bakery.png" alt="" />
+              </div>
+              <div class="tab-nav-item" onclick="handleVideoTabClick('fireHydrant', 1)">
+                <img src="./static/image/fireHydrant.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section ts-fs">
+      <div class="container">
+        <h2 class="title">Training Speed and File Size:</h2>
+        <div class="content">
+          <a
+            href="https://test.kiriengine.app/share/3dgs?taskId=1877194267185643520"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <video
+              src="./static/video/lizard/redpandacompress_lizard.mp4"
+              poster="./static/image/lizard.png"
+              autoplay
+              muted
+              loop
+              playsinline
+              webkit-playsinline
+            ></video>
+          </a>
+          <div class="img-wrap">
+            <img
+              src="./static/image/ts.png"
+              srcset="./static/image/m-ts.png 375w, ./static/image/m-ts-2x.png 1120w, ./static/image/ts.png 1920w"
+              sizes="(max-width: 375px) 375px, ((max-width: 1120px) and (min-width: 375px)) 1120px, (min-width: 1120px) 1920px"
+              alt=""
+            />
+            <img
+              src="./static/image/fs.png"
+              srcset="./static/image/m-fs.png 375w, ./static/image/m-fs-2x.png 1120w, ./static/image/fs.png 1920w"
+              sizes="(max-width: 375px) 375px, ((max-width: 1120px) and (min-width: 375px)) 1120px, (min-width: 1120px) 1920px"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="./static/js/index.js"></script>
+    <section class="section try-it-yourself">
+      <div class="container">
+        <div class="content">
+          <div class="column">
+            <h2 class="title">Try it yourself</h2>
+            <p>Please download our latest 3.13 version of KIRI Engine and try the best 3DGS render yourself!</p>
+          </div>
+          <img src="./static/image/application.png" alt="" class="column" />
+          <div class="links column">
+            <a
+              href="https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142?platform=iphone"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./static/image/ios.png"
+                srcset="./static/image/m-ios.png 375w, ./static/image/m-ios-2x.png 1120w, ./static/image/ios.png 1920w"
+                sizes="(max-width: 375px) 375px, ((max-width: 1120px) and (min-width: 375px)) 1120px, (min-width: 1120px) 1920px"
+                alt=""
+              />
+            </a>
+            <a
+              href="https://play.google.com/store/apps/details?id=com.kiriengine.app"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="./static/image/android.png"
+                srcset="
+                  ./static/image/m-android.png     375w,
+                  ./static/image/m-android-2x.png 1120w,
+                  ./static/image/android.png      1920w
+                "
+                sizes="(max-width: 375px) 375px, ((max-width: 1120px) and (min-width: 375px)) 1120px, (min-width: 1120px) 1920px"
+                alt=""
+              />
+            </a>
+            <a href="https://www.kiriengine.app/web-version/" target="_blank" rel="noopener noreferrer">
+              <img
+                src="./static/image/web.png"
+                srcset="./static/image/m-web.png 375w, ./static/image/m-web-2x.png 1120w, ./static/image/web.png 1920w"
+                sizes="(max-width: 375px) 375px, ((max-width: 1120px) and (min-width: 375px)) 1120px, (min-width: 1120px) 1920px"
+                alt=""
+              />
+            </a>
+          </div>
+        </div>
+        <div class="media-links">
+          <a href="https://discord.gg/rSydXRfS5y" class="discord" target="_blank" rel="noopener noreferrer">
+            <div class="cont">
+              <div class="l-icon">
+                <img src="./static/image/discord.png" alt="" />
+              </div>
+              <div class="tit">Discord</div>
+              <div class="arrow-icon">
+                <img src="./static/image/arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="des">Join our warm community or follow our twitter to get free trial</div>
+          </a>
+          <a href="https://x.com/KIRI_Engine_App" class="twitter" target="_blank" rel="noopener noreferrer">
+            <div class="cont">
+              <div class="l-icon">
+                <img src="./static/image/twitter.png" alt="" />
+              </div>
+              <div class="tit">Twitter</div>
+              <div class="arrow-icon">
+                <img src="./static/image/arrow.png" alt="" />
+              </div>
+            </div>
+            <div class="des">Join our warm community or follow our twitter to get free trial</div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
