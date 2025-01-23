@@ -15,10 +15,6 @@ let showMap = true;
 
 let model = "Statue";
 let modelList = {
-  BrokenCar: {
-    url: "https://www.kiriengine.app/share/3dgs?taskId=1852901035887034368",
-    distance: 0,
-  },
   Flower: {
     url: "https://www.kiriengine.app/share/3dgs?taskId=1852602821023629312",
     distance: 0,
