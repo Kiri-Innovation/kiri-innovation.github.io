@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iPhone Lidar 3D Scan Enhancement Showcases by KIRI Engine</title>
+    <meta name="author" content="KIRI Innovations" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
+    <link rel="stylesheet" href="./static/styles/index.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+        }
+      }
+    </script>
+    <script type="module" src="./static/js/general.js"></script>
+    <script type="module" src="./static/js/rooms.js"></script>
+  </head>
+  <body>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1">iPhone Lidar 3D Scan Enhancement Showcases by KIRI Engine</h1>
+              <div class="is-size-5 pub-auths">
+                <span> KIRI Innovations </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <!-- Results Comparison: -->
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3" style="text-align: center">Results Comparison:</h2>
+        <p style="margin: 1em 0">
+          **Please note, mesh loading may be slow. We display high poly models here and files are big.
+        </p>
+        <div class="content">
+          <h3 class="title is-4">Rooms</h3>
+          <div class="cmp-button-wrap">
+            <button class="cmp-button cmp-button-left active" id="roomsCmpButtonLeft">Geometry only</button>
+            <button class="cmp-button cmp-button-right" id="roomsCmpButtonRight">Textured</button>
+          </div>
+          <div class="cmp-container">
+            <div class="cmp-container-left" id="roomsCmpContainerLeft">
+              <label class="model-label"> 3.14 enhanced </label>
+              <div class="loading-wrap" id="roomsCmpProgressWrapLeft">
+                <progress max="100" value="0" class="loading" id="roomsCmpProgressLeft"></progress>
+              </div>
+            </div>
+            <div class="cmp-container-right" id="roomsCmpContainerRight">
+              <label class="model-label"> Original lidar scan </label>
+              <div class="loading-wrap" id="roomsCmpProgressWrapRight">
+                <progress max="100" value="0" class="loading" id="roomsCmpProgressRight"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="selection-panel">
+            <img src="./static/rooms/model1/cover.jpeg" onclick="handleRoomsComparisonClick('model1')" alt="" />
+            <img src="./static/rooms/model2/cover.jpeg" onclick="handleRoomsComparisonClick('model2')" alt="" />
+          </div>
+        </div>
+
+        <br />
+        <div class="content">
+          <h3 class="title is-4">General</h3>
+          <div class="cmp-button-wrap">
+            <button class="cmp-button cmp-button-left active" id="generalCmpButtonLeft">Geometry only</button>
+            <button class="cmp-button cmp-button-right" id="generalCmpButtonRight">Textured</button>
+          </div>
+          <div class="cmp-container">
+            <div class="cmp-container-left" id="generalCmpContainerLeft">
+              <label class="model-label"> 3.14 enhanced </label>
+              <div class="loading-wrap" id="generalCmpProgressWrapLeft">
+                <progress max="100" value="0" class="loading" id="generalCmpProgressLeft"></progress>
+              </div>
+            </div>
+            <div class="cmp-container-right" id="generalCmpContainerRight">
+              <label class="model-label"> Original lidar scan </label>
+              <div class="loading-wrap" id="generalCmpProgressWrapRight">
+                <progress max="100" value="0" class="loading" id="generalCmpProgressRight"></progress>
+              </div>
+            </div>
+          </div>
+          <div class="selection-panel">
+            <img src="./static/general/model1/cover.jpg" onclick="handleGeneralComparisonClick('model1')" alt="" />
+            <img src="./static/general/model2/cover.jpg" onclick="handleGeneralComparisonClick('model2')" alt="" />
+            <img src="./static/general/model3/cover.jpg" onclick="handleGeneralComparisonClick('model3')" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <div class="columns">
+          <div class="column is-four-fifths" style="width: 100%">
+            <h2 class="title is-3" style="text-align: center">Try it yourself:</h2>
+            <p>Please download our latest 3.14 version of KIRI Engine and try the lidar scan enhancement function!</p>
+            <ul>
+              <li>
+                Only available on iOS:
+                <a
+                  href="https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142?platform=iphone"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  https://apps.apple.com/us/app/kiri-engine-3d-scanner-lidar/id1577127142?platform=iphone
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <p>Join our warm community to get free trial</p>
+            <a href="https://discord.gg/DqfKjPYv" target="_blank" rel="noopener noreferrer">
+              https://discord.gg/DqfKjPYv
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
