@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const compareModelLink = {
     bakery: {
-      kiri: "https://test.kiriengine.app/share/3dgs/?taskId=1876174247215235072",
+      kiri: "https://test.kiriengine.app/share/3dgs?taskId=1876174247215235072",
       polycam: "https://poly.cam/capture/4d0df115-440c-4bb7-a538-0c5a69e20ccb",
       luma: "https://lumalabs.ai/embed/96a88a70-2e2b-4061-bbd9-9151e3f4d75f?mode=sparkles&background=%23ffffff&color=%23000000&showTitle=true&loadBg=true&logoPosition=bottom-left&infoPosition=bottom-right&cinematicVideo=undefined&showMenu=false",
     },

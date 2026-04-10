@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3D Gaussian Splatting to Mesh 2.0 Showcases by KIRI Engine</title>
+    <title>3D Gaussian Splatting to Mesh 3.0 Showcases by KIRI Engine</title>
     <link rel="icon" href="../static/favicon.ico" type="image/x-icon" />
     <meta name="author" content="KIRI Innovations" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css" />
@@ -17,7 +17,6 @@
       }
     </script>
     <script type="module" src="./static/js/general.js"></script>
-    <script type="module" src="./static/js/DetectedAsReflection.js"></script>
   </head>
   <body>
     <section class="hero">
@@ -25,39 +24,10 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1">3D Gaussian Splatting to Mesh 2.0 Showcases by KIRI Engine</h1>
+              <h1 class="title is-1">3D Gaussian Splatting to Mesh 3.0 Showcases by KIRI Engine</h1>
               <div class="is-size-5 pub-auths">
                 <span> KIRI Innovations </span>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Introduction Video:</h2>
-            <div class="content has-text-justified">
-              <iframe
-                width="560"
-                height="315"
-                style="
-                  max-width: 100%;
-                  max-height: 100%;
-                  min-width: 100%;
-                  min-height: 100%;
-                  width: 984px;
-                  height: 553.5px;
-                "
-                src="https://www.youtube.com/embed/88X81MYZl8k?si=44q1b4TmzA_-Y4zG"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin"
-                allowfullscreen
-              ></iframe>
             </div>
           </div>
         </div>
@@ -74,84 +44,45 @@
         <div class="content">
           <h3 class="title is-4">General</h3>
           <div class="cmp-button-wrap">
-            <button class="cmp-button cmp-button-left active" id="generalCmpButtonLeft">Textured</button>
-            <button class="cmp-button cmp-button-right" id="generalCmpButtonRight">Geometry only</button>
+            <button class="cmp-button cmp-button-left active" id="generalCmpButtonLeft">Geometry only</button>
+            <button class="cmp-button cmp-button-right" id="generalCmpButtonRight">Texture</button>
             <a id="generalCheck3dgs" target="_blank" rel="noopener noreferrer"> Check 3dgs </a>
           </div>
 
           <div class="cmp-container">
             <div class="cmp-container-left" id="generalCmpContainerLeft">
-              <label class="model-label"> 2.0 </label>
+              <label class="model-label"> 3.0 </label>
               <div class="loading-wrap">
                 <progress max="100" value="0" class="loading"></progress>
               </div>
             </div>
             <div class="cmp-container-right" id="generalCmpContainerRight">
-              <select class="dropdown model-label" id="generalModelLabelDropdown">
-                <option value="0">1.0</option>
-                <option value="1">Photogrammetry</option>
-              </select>
+              <label class="model-label"> 2.0 </label>
               <div class="loading-wrap">
                 <progress max="100" value="0" class="loading"></progress>
               </div>
             </div>
           </div>
           <div class="selection-panel">
-            <img src="./static/General/Statue/cover.jpg" onclick="handleGeneralComparisonClick('Statue')" alt="" />
-            <img src="./static/General/Flower/cover.jpg" onclick="handleGeneralComparisonClick('Flower')" alt="" />
-            <img src="./static/General/Suitcase/cover.jpg" onclick="handleGeneralComparisonClick('Suitcase')" alt="" />
+            <img src="./static/General/Gundam/cover.png" onclick="handleGeneralComparisonClick('Gundam')" alt="" />
+            <img
+              src="./static/General/Windowsill/cover.png"
+              onclick="handleGeneralComparisonClick('Windowsill')"
+              alt=""
+            />
+            <img
+              src="./static/General/StoneElephant/cover.png"
+              onclick="handleGeneralComparisonClick('StoneElephant')"
+              alt=""
+            />
           </div>
         </div>
         <br />
-        <div class="content">
-          <h3 class="title is-4">Detected As Reflection</h3>
-          <div class="cmp-button-wrap">
-            <button class="cmp-button cmp-button-left active" id="DRCmpButtonLeft">Textured</button>
-            <button class="cmp-button cmp-button-right" id="DRCmpButtonRight">Geometry only</button>
-            <a id="DRCheck3dgs" target="_blank" rel="noopener noreferrer"> Check 3dgs </a>
-          </div>
-
-          <div class="cmp-container">
-            <div class="cmp-container-left" id="DRCmpContainerLeft">
-              <label class="model-label"> 2.0 With Reflection Detector </label>
-              <div class="loading-wrap">
-                <progress max="100" value="0" class="loading"></progress>
-              </div>
-            </div>
-            <div class="cmp-container-right" id="DRCmpContainerRight">
-              <select class="dropdown model-label" id="DRModelLabelDropdown">
-                <option value="0">2.0 Without Reflection Detector</option>
-                <option value="1">1.0</option>
-                <option value="2">Photogrammetry</option>
-              </select>
-              <div class="loading-wrap">
-                <progress max="100" value="0" class="loading"></progress>
-              </div>
-            </div>
-          </div>
-          <div class="selection-panel">
-            <img src="./static/DetectedAsReflection/TV/cover.jpg" onclick="handleDRComparisonClick('TV')" alt="" />
-            <img
-              src="./static/DetectedAsReflection/Buddha/cover.jpg"
-              onclick="handleDRComparisonClick('Buddha')"
-              alt=""
-            />
-            <img
-              src="./static/DetectedAsReflection/BackMirror/cover.jpg"
-              onclick="handleDRComparisonClick('BackMirror')"
-              alt=""
-            />
-          </div>
-        </div>
-        <p>
-          We predicted normal and depth maps to regulate the surface, eliminating holes and defects caused by shiny and
-          transparent regions in 3D Gaussian splatting.
-        </p>
       </div>
     </section>
     <section class="section">
       <div class="container is-max-desktop">
-        <h2 class="title is-3" style="text-align: center">More Unedited 3DGS to Mesh 2.0 Results:</h2>
+        <h2 class="title is-3" style="text-align: center">More Unedited 3DGS to Mesh 3.0 Results:</h2>
 
         <p style="margin: 1em 0">
           **Please note, mesh loading may be slow. We display high poly models here and files are big.
@@ -159,18 +90,18 @@
         <div class="content fixed-grid has-3-cols to-mesh">
           <div class="grid">
             <div class="cell">
-              <img src="./static/image/0ae0e041-1676-40df-8e67-5c61e263a554.png" alt="" />
+              <img src="./static/image/well.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/shareModel/f4915030ead74f5ca03880f01d37b36e"
+                  href="https://test.kiriengine.app/share/shareModel/1b8cb967d4fa44a28fc425dab822df28?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1856931484665905152"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2041786042905788416"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -180,18 +111,18 @@
               </div>
             </div>
             <div class="cell">
-              <img src="./static/image/75abd10a-b31a-43a7-bb54-5e8f0088abad.png" alt="" />
+              <img src="./static/image/food.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/shareModel/0567188634fc4f50a6a2dd21b1e091cd"
+                  href="https://test.kiriengine.app/share/shareModel/13c213e3fc744c7f8ab6fbf64099389a?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1858838533955911680"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2041779647464603648"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -201,18 +132,18 @@
               </div>
             </div>
             <div class="cell">
-              <img src="./static/image/ab7430d1-0925-496b-8a52-e46332331e69.png" alt="" />
+              <img src="./static/image/sofa.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/shareModel/fe5e5e92f8d743478b9e3ac0d04c6df7"
+                  href="https://test.kiriengine.app/share/shareModel/488bfc0c78ff44fea71ee653310bcc0e?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1857400383970738176"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2041790841743212544"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -222,18 +153,18 @@
               </div>
             </div>
             <div class="cell">
-              <img src="./static/image/ffd7e716-bdff-47b2-a61e-fbcc78b6e9f8.png" alt="" />
+              <img src="./static/image/clothing.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/shareModel/939d8fb98dd544628c14eaa1cdd87d08"
+                  href="https://test.kiriengine.app/share/shareModel/5598a6c88b6a40e792cdb894a8759dba?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1859154913506885632"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2041744464044621824"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -243,18 +174,18 @@
               </div>
             </div>
             <div class="cell">
-              <img src="./static/image/20241126-131732.png" alt="" />
+              <img src="./static/image/box.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/sharemodel/08edddcba242478da893e90cef6a10a9"
+                  href="https://test.kiriengine.app/share/sharemodel/6a8281109d6f420694b72bee269762a9?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1860979076458610688"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2041790553984598016"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -264,18 +195,18 @@
               </div>
             </div>
             <div class="cell">
-              <img src="./static/image/20241126-131739.png" alt="" />
+              <img src="./static/image/bottle.png" alt="" />
               <div class="bottom">
                 <a
-                  href="https://test.kiriengine.app/share/sharemodel/0079291ed47e4577973ae8e8494d4da8"
+                  href="https://test.kiriengine.app/share/sharemodel/fcf81938371345c7b756c6eb5791cba2?show_textured=0"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  View Textured Mesh
+                  View Mesh
                 </a>
                 <a
-                  href="https://test.kiriengine.app/share/3dgs?taskId=1861267361072414720"
+                  href="https://test.kiriengine.app/share/3dgs?taskId=2039644829515776000"
                   class="button is-small"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -295,8 +226,7 @@
           <div class="column is-four-fifths" style="width: 100%">
             <h2 class="title is-3" style="text-align: center">Try it yourself:</h2>
             <p>
-              Please download our latest 3.12 version of KIRI Engine and try the SOTA Gaussian to Mesh function
-              yourself!
+              Please download our latest 4.2 version of KIRI Engine and try the SOTA Gaussian to Mesh function yourself!
             </p>
             <ul>
               <li>
@@ -328,8 +258,8 @@
             </ul>
             <hr />
             <p>Join our warm community to get free trial</p>
-            <a href="https://discord.gg/DqfKjPYv" target="_blank" rel="noopener noreferrer">
-              https://discord.gg/DqfKjPYv
+            <a href="https://discord.gg/8NDj9hpHX9" target="_blank" rel="noopener noreferrer">
+              https://discord.gg/8NDj9hpHX9
             </a>
           </div>
         </div>
